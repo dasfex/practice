@@ -13,7 +13,7 @@ void Dfs(int v, int p = 0) {
     static int timer = 0;
     tin[v] = ++timer;
     up[v][0] = p;
-    for (int i = 1; i <= l; ++i) {
+    for (int i = 1; i <= log; ++i) {
         up[v][i] = up[up[v][i - 1]][i - 1];
     }
     for (auto to : d[v]) {
