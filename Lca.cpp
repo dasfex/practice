@@ -31,7 +31,7 @@ bool IsAncestor(int a, int b) {
 int Lca(int a, int b) {
     if (IsAncestor(a, b)) return a;
     if (IsAncestor(b, a)) return b;
-    for (int i = l; i >= 0; --i) {
+    for (int i = log; i >= 0; --i) {
         if (!IsAncestor(up[a][i], b)) {
             a = up[a][i];
         }
