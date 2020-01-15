@@ -7,10 +7,17 @@
 ## Math algorithms
 
 1. LU decomposition.
-2. Gauss Algorithm to find inverse matrix.
-3. Eiler function.
-4. Matrix transposition.
-5. Fast finding nth fibonachi number modulo m.
+2. LDLT decomposition.
+3. Gauss Algorithm to find inverse matrix.
+4. Eiler function.
+5. Matrix transposition.
+6. Fast finding nth fibonachi number modulo m.
+7. Tridiagonal matrix algorithm.
+8. Danilevskiy algorithm to find characteristic polynomial and
+Newton algorithm to find real roots.
+9. Power method to find max eigenvalue.
+10. QR algorithm to find eigenvalues of matrix and
+eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
 
 ## Graphs
 
