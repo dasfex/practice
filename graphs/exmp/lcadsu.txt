@@ -1,0 +1,157 @@
+// codeforces.com/contest/609/problem/E
+
+#include <bits/stdc++.h>
+
+#define int long long
+ 
+using namespace std;
+ 
+const int N = 2e5 + 7, MOD = 1e9 + 7, INF = numeric_limits<int>::max();
+const long double PI = acos(-1);
+const double EPS = 0.000000001;
+ 
+template<typename T, typename S>
+ostream &operator<<(ostream &out, const pair<T, S> &x) {
+  out << x.first << ' ' << x.second;
+  return out;
+}
+ 
+template<typename T>
+ostream &operator<<(ostream &out, const vector<T> &x) {
+  for (const T &a : x) {
+    out << a << ' ';
+  }
+  return out;
+}
+ 
+template<typename T>
+istream &operator>>(istream &in, vector<T> &x) {
+  for (T &a : x) {
+    in >> a;
+  }
+  return in;
+}
+ 
+template<typename T, typename S>
+istream &operator>>(istream &in, pair<T, S> &x) {
+  in >> x.first >> x.second;
+  return in;
+}
+ 
+// solve
+ 
+int llog;
+int up[N][20], maxi[N][20];
+int tin[N], tout[N];
+vector<pair<int, int>> d[N];
+map<pair<int, int>, int> mp;
+ 
+struct e {
+  int u, v, w, ind;
+ 
+  bool operator<(e other) {
+    return w < other.w;
+  }
+};
+ 
+namespace NDsu {
+int n;
+vector<int> dsu;
+ 
+void Init() {
+    dsu.resize(n + 1, -1);
+}
+ 
+int Find(int v) {
+    return dsu[v] < 0 ? v : v = Find(dsu[v]);
+}
+ 
+void Union(int u, int v) {
+    u = Find(u);
+    v = Find(v);
+    if (dsu[u] > dsu[v]) swap(u, v);
+    dsu[u] += dsu[v];
+    dsu[v] = u;
+}
+ 
+}
+ 
+void Dfs(int v, int p = 1,int len = 0) {
+    static int timer = 0;
+    tin[v] = ++timer;
+    up[v][0] = p;
+    maxi[v][0] = len;
+    for (int i = 1; i <= llog; ++i) {
+        up[v][i] = up[up[v][i - 1]][i - 1];
+        maxi[v][i] = max(maxi[v][i - 1], maxi[up[v][i - 1]][i - 1]);
+    }
+    for (auto to : d[v]) {
+        if (to.first != p) {
+            Dfs(to.first, v, to.second);
+        }
+    }
+    tout[v] = timer;
+}
+ 
+bool IsAncestor(int a, int b) {
+    return (tin[a] <= tin[b] && tout[a] >= tout[b]);
+}
+ 
+int GetMaxEdge(int a, int b) {
+    int ret = 0;
+    if (IsAncestor(a, b)) return ret;
+    for (int i = llog; i >= 0; --i) {
+        if (!IsAncestor(up[a][i], b)) {
+            ret = max(ret, maxi[a][i]);
+            a = up[a][i];
+        }
+    }
+    return max(ret, maxi[a][0]);
+}
+ 
+int32_t main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(0);
+ 
+  int n, m;
+  cin >> n >> m;
+  vector<e> edges(m);
+  for (int i = 0; i < m; ++i) {
+    cin >> edges[i].u >> edges[i].v >> edges[i].w;
+    edges[i].ind = i;
+  }
+  sort(begin(edges), end(edges));
+  NDsu::n = n; NDsu::Init();
+  vector<int> anss(m);
+  int sz = 0, ans = 0;
+  for (int i = 0; i < m; ++i) {
+    if (sz == NDsu::n - 1) break;
+    int u = NDsu::Find(edges[i].u);
+    int v = NDsu::Find(edges[i].v);
+    if (u == v) continue;
+    ++sz; ans += edges[i].w;
+    NDsu::Union(edges[i].u, edges[i].v);
+    d[edges[i].u].push_back(make_pair(edges[i].v, edges[i].w));
+    d[edges[i].v].push_back(make_pair(edges[i].u, edges[i].w));
+    anss[edges[i].ind] = -1;
+  }
+  llog = 1;
+  while ((1 << llog) < n) {
+    ++llog;
+  }
+  Dfs(1);
+  for (int i = 0; i < m; ++i) {
+    if (anss[edges[i].ind] == -1) {
+        anss[edges[i].ind] = ans;
+        continue;
+    }
+    int q1 = GetMaxEdge(edges[i].u, edges[i].v);
+    q1 = max(q1, GetMaxEdge(edges[i].v, edges[i].u));
+    anss[edges[i].ind] = ans - q1 + edges[i].w;
+  }
+  for (int i = 0; i < m; ++i) {
+    cout << anss[i] << endl;
+  }
+ 
+  return 0;
+}
