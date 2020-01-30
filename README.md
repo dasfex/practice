@@ -1,10 +1,10 @@
 # Algorithms
 
-## Data structures
+### Data structures
 
 1. Binary heap.
 
-## Math algorithms
+### Math algorithms
 
 1. LU decomposition.
 2. LDLT decomposition.
@@ -19,7 +19,7 @@ Newton algorithm to find real roots.
 10. QR algorithm to find eigenvalues of matrix and
 eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
 
-## Graphs
+### Graphs
 
 1. Dijkstra algorithm.
 2. LCA(less common ancestor) with binary lifts.
