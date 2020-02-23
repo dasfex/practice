@@ -1,8 +1,7 @@
 namespace NDsu {
-int n;
 vector<int> dsu;
 
-void Init() {
+void Init(int n) {
     dsu.resize(n + 1, -1);
 }
 
