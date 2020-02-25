@@ -3,6 +3,7 @@
 ### Data structures
 
 1. Binary heap.
+2. Binary search tree(unbalanced).
 
 ### Math algorithms
 
@@ -25,3 +26,17 @@ eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
 2. LCA(less common ancestor) with binary lifts.
 3. DSU(disjoint set union).
 4. Some examples.
+
+### C++
+
+##### Algos
+
+##### Classes
+
+1. Vector.
+2. Bidirectional list.
+3. Unique ptr.
+
+### Other
+
+1. Rational class.
