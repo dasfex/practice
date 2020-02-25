@@ -29,9 +29,9 @@ eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
 
 ### C++
 
-##### Algos
+#### Algos
 
-##### Classes
+#### Classes
 
 1. Vector.
 2. Bidirectional list.
