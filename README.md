@@ -31,11 +31,16 @@ eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
 
 #### Algos
 
+1. FindIf(multithreading function to find all numbers in some range that satisfies some unary predicate).
+2. Reduce(multithreading function than compute result of some associative commutative binary predicate to all vector elements).
+
 #### Classes
 
 1. Vector.
 2. Bidirectional list.
 3. Unique ptr.
+4. Buffered channel(class that provides synchronization between threads when store some values(in buffer)).
+5. Unbuffered channel(same as buffered channel but without buffer).
 
 ### Other
 
