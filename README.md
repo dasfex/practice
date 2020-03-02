@@ -4,6 +4,7 @@
 
 1. Binary heap.
 2. Binary search tree(unbalanced).
+3. Segment tree(sum).
 
 ### Math algorithms
 
