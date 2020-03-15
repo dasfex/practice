@@ -21,6 +21,7 @@ Newton algorithm to find real roots.
 9. Power method to find max eigenvalue.
 10. QR algorithm to find eigenvalues of matrix and
 eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
+11. Binary exponential.
 
 ### Graphs
 
