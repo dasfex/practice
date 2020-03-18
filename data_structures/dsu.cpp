@@ -12,6 +12,7 @@ int Find(int v) {
 void Union(int u, int v) {
     u = Find(u);
     v = Find(v);
+    if (u == v) return;
     if (dsu[u] > dsu[v]) swap(u, v);
     dsu[u] += dsu[v];
     dsu[v] = u;
