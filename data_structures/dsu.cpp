@@ -6,7 +6,7 @@ void Init(int n) {
 }
 
 int Find(int v) {
-    return dsu[v] < 0 ? v : v = Find(dsu[v]);
+    return dsu[v] < 0 ? dsu[v] : v = Find(dsu[v]);
 }
 
 void Union(int u, int v) {
