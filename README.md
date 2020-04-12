@@ -9,19 +9,33 @@
 
 ### Math algorithms
 
+#### Matrix algos
+
 1. LU decomposition.
 2. LDLT decomposition.
 3. Gauss Algorithm to find inverse matrix.
-4. Eiler function.
-5. Matrix transposition.
-6. Fast finding nth fibonachi number modulo m.
-7. Tridiagonal matrix algorithm.
-8. Danilevskiy algorithm to find characteristic polynomial and
-Newton algorithm to find real roots.
-9. Power method to find max eigenvalue.
-10. QR algorithm to find eigenvalues of matrix and
+4. Matrix transposition.
+5. Tridiagonal matrix algorithm.
+6. QR algorithm to find eigenvalues of matrix and
 eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
-11. Binary exponential.
+
+#### Approxes
+
+1. Lagrange interpolation.
+2. Hermit interpolation(with Newton interpolation).
+3. Spline interpolation.
+4. Least square method.
+5. 2D Lagrange.
+6. Value in point on 100 equallyspaced points.
+7. Newton method for solving nonlinear system.
+8. Power method to find max eigenvalue.
+
+#### Other
+
+1. Binary exponential.
+2. Eiler function.
+3. Fast finding nth fibonachi number modulo m.
+4. Danilevskiy algo to find characteristic polynomial and Newton algo to find real roots.
 
 ### Graphs
 
