@@ -1,13 +1,13 @@
 # Algorithms
 
-### Data structures
+## Data structures
 
 1. Binary heap.
 2. Binary search tree(unbalanced).
 3. Segment tree(sum).
 4. DSU(disjoint set union).
 
-### Math algorithms
+## Math algorithms
 
 #### Matrix algos
 
@@ -38,13 +38,13 @@ eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
 3. Fast finding nth fibonachi number modulo m.
 4. Danilevskiy algo to find characteristic polynomial and Newton algo to find real roots.
 
-### Graphs
+## Graphs
 
 1. Dijkstra algorithm.
 2. LCA(less common ancestor) with binary lifts.
 3. Some examples.
 
-### C++
+## C++
 
 #### Algos
 
@@ -59,7 +59,7 @@ eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
 4. Buffered channel(class that provides synchronization between threads when store some values(in buffer)).
 5. Unbuffered channel(same as buffered channel but without buffer).
 
-### Other
+## Other
 
 1. Rational class.
 2. My gnu cat version.
