@@ -29,6 +29,7 @@ eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
 6. Value in point on 100 equallyspaced points.
 7. Newton method for solving nonlinear system.
 8. Power method to find max eigenvalue.
+9. Simpson integration.
 
 #### Other
 
