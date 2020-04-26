@@ -2,64 +2,65 @@
 
 ## [Data structures](https://github.com/dasfex/Algorithms/tree/master/data_structures)
 
-1. Binary heap.
-2. Binary search tree(unbalanced).
-3. Segment tree(sum).
-4. DSU(disjoint set union).
+1. [Binary heap](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_heap.h).
+2. [Binary search tree(unbalanced)](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_search_tree.cpp).
+3. [Segment tree(sum) with 2N memory use](https://github.com/dasfex/Algorithms/blob/master/data_structures/segment_tree.cpp).
+4. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
 
-## Math algorithms
+## [Math algorithms](https://github.com/dasfex/Algorithms/tree/master/math)
 
-#### Matrix algos
+#### [Matrix algos](https://github.com/dasfex/Algorithms/tree/master/math/matrices)
 
-1. LU decomposition.
-2. LDLT decomposition.
-3. Gauss Algorithm to find inverse matrix.
-4. Matrix transposition.
-5. Tridiagonal matrix algorithm.
-6. QR algorithm to find eigenvalues of matrix and
-eigenvectors of symmetric matrix(Givens rotation, Householder transformation).
+1. [LU decomposition](https://github.com/dasfex/Algorithms/blob/master/math/matrices/LU.h).
+2. [LDLT decomposition](https://github.com/dasfex/Algorithms/blob/master/math/matrices/LDLT.h).
+3. [Gauss method to find inverse matrix](https://github.com/dasfex/Algorithms/blob/master/math/matrices/gauss.h).
+4. [Matrix transposition](https://github.com/dasfex/Algorithms/blob/master/math/matrices/transposition.h).
+5. [Tridiagonal matrix algorithm](https://github.com/dasfex/Algorithms/blob/master/math/matrices/TMA.h).
+6. [QR algorithm to find eigenvalues of matrix and eigenvectors of symmetric matrix(Givens rotation, Householder transformation)](https://github.com/dasfex/Algorithms/blob/master/math/matrices/QR.h).
 
-#### Approxes
+#### [Approxes](https://github.com/dasfex/Algorithms/tree/master/math/approxes)
 
-1. Lagrange interpolation.
-2. Hermit interpolation(with Newton interpolation).
-3. Spline interpolation.
-4. Least square method.
-5. 2D Lagrange.
-6. Value in point on 100 equallyspaced points.
-7. Newton method for solving nonlinear system.
-8. Power method to find max eigenvalue.
-9. Simpson integration.
+1. [Lagrange interpolation](https://github.com/dasfex/Algorithms/blob/master/math/approxes/lagrange.py).
+2. [Hermit interpolation(with Newton interpolation)](https://github.com/dasfex/Algorithms/blob/master/math/approxes/hermit.py).
+3. [Spline interpolation](https://github.com/dasfex/Algorithms/blob/master/math/approxes/spline.py).
+4. [Least square method](https://github.com/dasfex/Algorithms/blob/master/math/approxes/least_square_method.py).
+5. [2D Lagrange](https://github.com/dasfex/Algorithms/blob/master/math/approxes/2d_lagrange.py).
+6. [Value in point on 100 equallyspaced points](https://github.com/dasfex/Algorithms/blob/master/math/approxes/val_in_point_on_equallyspaced_points.py).
+7. [Newton method for solving nonlinear system](https://github.com/dasfex/Algorithms/blob/master/math/approxes/newton_nonlin_syst.py).
+8. [Power method to find max eigenvalue](https://github.com/dasfex/Algorithms/blob/master/math/approxes/PowerMethod.h).
+9. [Simpson integration](https://github.com/dasfex/Algorithms/blob/master/math/approxes/simpson_integration.py).
 
-#### Other
+#### [Other](https://github.com/dasfex/Algorithms/tree/master/math/other)
 
-1. Binary exponential.
-2. Eiler function.
-3. Fast finding nth fibonachi number modulo m.
-4. Danilevskiy algo to find characteristic polynomial and Newton algo to find real roots.
+1. [Binary exponential](https://github.com/dasfex/Algorithms/blob/master/math/other/binary_exp.cpp).
+2. [Eiler function](https://github.com/dasfex/Algorithms/blob/master/math/other/EilerFunction.cpp).
+3. [Fast finding nth fibonachi number modulo m](https://github.com/dasfex/Algorithms/blob/master/math/other/fibonachi.cpp).
+4. [Danilevskiy algo to find characteristic polynomial and Newton algo to find real roots](https://github.com/dasfex/Algorithms/blob/master/math/other/Danilevskiy%26Newton.h).
 
-## Graphs
+#### [Some algos in pictures](https://github.com/dasfex/Algorithms/tree/master/math/some_algos_in_pictures)
 
-1. Dijkstra algorithm.
-2. LCA(less common ancestor) with binary lifts.
-3. Some examples.
+## [Graphs](https://github.com/dasfex/Algorithms/tree/master/graphs)
 
-## C++
+1. [Dijkstra algorithm](https://github.com/dasfex/Algorithms/blob/master/graphs/Dijkstra.cpp).
+2. [LCA(less common ancestor) with binary lifts](https://github.com/dasfex/Algorithms/blob/master/graphs/Lca.cpp).
+3. [Some examples](https://github.com/dasfex/Algorithms/tree/master/graphs/exmp).
 
-#### Algos
+## [C++](https://github.com/dasfex/Algorithms/tree/master/cpp)
 
-1. FindIf(multithreading function to find all numbers in some range that satisfies some unary predicate).
-2. Reduce(multithreading function than compute result of some associative commutative binary predicate to all vector elements).
+#### [Algos](https://github.com/dasfex/Algorithms/tree/master/cpp/algos)
 
-#### Classes
+1. [FindIf(multithreading function to find all numbers in some range that satisfies some unary predicate)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/find_if.h).
+2. [Reduce(multithreading function than compute result of some associative commutative binary predicate to all vector elements)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/reduce.h).
 
-1. Vector.
-2. Bidirectional list.
-3. Unique ptr.
-4. Buffered channel(class that provides synchronization between threads when store some values(in buffer)).
-5. Unbuffered channel(same as buffered channel but without buffer).
+#### [Classes]()
 
-## Other
+1. [Vector](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/vector.cpp).
+2. [Bidirectional list](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/bidirectional_list.cpp).
+3. [Unique ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unique_ptr.cpp).
+4. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
+5. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
 
-1. Rational class.
-2. My gnu cat version.
+## [Other](https://github.com/dasfex/Algorithms/tree/master/other)
+
+1. [Rational class](https://github.com/dasfex/Algorithms/blob/master/other/rational_class.cpp).
+2. [My GNU cat version](https://github.com/dasfex/Algorithms/blob/master/other/cat.c).
