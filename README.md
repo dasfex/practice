@@ -1,6 +1,6 @@
 # Algorithms
 
-## Data structures
+## [Data structures](https://github.com/dasfex/Algorithms/tree/master/data_structures)
 
 1. Binary heap.
 2. Binary search tree(unbalanced).
