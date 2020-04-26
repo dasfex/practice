@@ -1,13 +1,13 @@
 # Algorithms
 
-## [Data structures](https://github.com/dasfex/Algorithms/tree/master/data_structures)
+## Data structures
 
 1. [Binary heap](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_heap.h).
 2. [Binary search tree(unbalanced)](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_search_tree.cpp).
 3. [Segment tree(sum) with 2N memory use](https://github.com/dasfex/Algorithms/blob/master/data_structures/segment_tree.cpp).
 4. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
 
-## [Math algorithms](https://github.com/dasfex/Algorithms/tree/master/math)
+## Math algorithms
 
 #### [Matrix algos](https://github.com/dasfex/Algorithms/tree/master/math/matrices)
 
@@ -39,13 +39,13 @@
 
 #### [Some algos in pictures](https://github.com/dasfex/Algorithms/tree/master/math/some_algos_in_pictures)
 
-## [Graphs](https://github.com/dasfex/Algorithms/tree/master/graphs)
+## Graphs
 
 1. [Dijkstra algorithm](https://github.com/dasfex/Algorithms/blob/master/graphs/Dijkstra.cpp).
 2. [LCA(less common ancestor) with binary lifts](https://github.com/dasfex/Algorithms/blob/master/graphs/Lca.cpp).
 3. [Some examples](https://github.com/dasfex/Algorithms/tree/master/graphs/exmp).
 
-## [C++](https://github.com/dasfex/Algorithms/tree/master/cpp)
+## C++
 
 #### [Algos](https://github.com/dasfex/Algorithms/tree/master/cpp/algos)
 
@@ -60,7 +60,7 @@
 4. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
 5. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
 
-## [Other](https://github.com/dasfex/Algorithms/tree/master/other)
+## Other
 
 1. [Rational class](https://github.com/dasfex/Algorithms/blob/master/other/rational_class.cpp).
 2. [My GNU cat version](https://github.com/dasfex/Algorithms/blob/master/other/cat.c).
