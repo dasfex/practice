@@ -64,6 +64,6 @@
 
 1. [Rational class](https://github.com/dasfex/Algorithms/blob/master/other/rational_class.cpp).
 2. [My GNU cat version](https://github.com/dasfex/Algorithms/blob/master/other/cat.c).
-3. [MapReduce](https://github.com/dasfex/Algorithms/blob/master/other/mapreduce)
+3. [MapReduce](https://github.com/dasfex/Algorithms/blob/master/other/mapreduce).
    + [inplace MapReduce](https://github.com/dasfex/Algorithms/blob/master/other/mapreduce/inplace)
 4. [External sort](https://github.com/dasfex/Algorithms/tree/master/other/external_sort).
