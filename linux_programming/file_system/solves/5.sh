@@ -1,0 +1,2 @@
+readlink symlink
+realpath symlink
