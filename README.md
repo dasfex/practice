@@ -52,7 +52,7 @@
 1. [FindIf(multithreading function to find all numbers in some range that satisfies some unary predicate)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/find_if.h).
 2. [Reduce(multithreading function than compute result of some associative commutative binary predicate to all vector elements)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/reduce.h).
 
-#### [Classes]()
+#### [Classes](https://github.com/dasfex/Algorithms/tree/master/cpp)
 
 1. [Vector](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/vector.cpp).
 2. [Bidirectional list](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/bidirectional_list.cpp).
@@ -62,13 +62,18 @@
 
 ## Linux programming
 
-1. GNU cat.
-2. Custom pipeline.
+1. [File system tasks](https://github.com/dasfex/Algorithms/tree/master/linux_programming/file_system).
+2. [Processes tasks](https://github.com/dasfex/Algorithms/tree/master/linux_programming/processes).
+3. [Shell tasks](https://github.com/dasfex/Algorithms/tree/master/linux_programming/shell).
+4. [Shell2 tasks](https://github.com/dasfex/Algorithms/tree/master/linux_programming/shell2).
+5. [GNU cat](https://github.com/dasfex/Algorithms/blob/master/linux_programming/cat.c).
+6. [Custom pipeline](https://github.com/dasfex/Algorithms/blob/master/linux_programming/pipeline.c).
+
+## MapReduce
+
+1. Inplace(with solve for WordCount).
 
 ## Other
 
 1. [Rational class](https://github.com/dasfex/Algorithms/blob/master/other/rational_class.cpp).
-2. [My GNU cat version](https://github.com/dasfex/Algorithms/blob/master/other/cat.c).
-3. [MapReduce](https://github.com/dasfex/Algorithms/blob/master/other/mapreduce).
-   + [inplace MapReduce](https://github.com/dasfex/Algorithms/blob/master/other/mapreduce/inplace)
-4. [External sort](https://github.com/dasfex/Algorithms/tree/master/other/external_sort).
+2. [External sort](https://github.com/dasfex/Algorithms/tree/master/other/external_sort).
