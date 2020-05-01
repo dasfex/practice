@@ -52,7 +52,7 @@
 1. [FindIf(multithreading function to find all numbers in some range that satisfies some unary predicate)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/find_if.h).
 2. [Reduce(multithreading function than compute result of some associative commutative binary predicate to all vector elements)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/reduce.h).
 
-#### [Classes](https://github.com/dasfex/Algorithms/tree/master/cpp)
+#### [Classes](https://github.com/dasfex/Algorithms/tree/master/cpp/classes)
 
 1. [Vector](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/vector.cpp).
 2. [Bidirectional list](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/bidirectional_list.cpp).
