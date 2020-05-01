@@ -98,8 +98,6 @@ class Rational {
     return !(*this == num);
   }
 
-  //Âìåñòî èñïîëüçîâàíèÿ double ïðèâîæó ê îáùåìó çíàìåíàòåëþ.
-  //Òî÷íî íå âîçíèêíåò ïðîáëåì èç-çà âîçìîæíîé ïîòåðè òî÷íîñòè.
   bool operator<(const Rational &num) const {
     return numerator_ * num.denominator_ < num.numerator_ * denominator_;
   }
