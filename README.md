@@ -60,6 +60,11 @@
 4. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
 5. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
 
+## Linux programming
+
+1. GNU cat.
+2. Custom pipeline.
+
 ## Other
 
 1. [Rational class](https://github.com/dasfex/Algorithms/blob/master/other/rational_class.cpp).
