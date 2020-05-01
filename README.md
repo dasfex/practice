@@ -71,7 +71,7 @@
 
 ## MapReduce
 
-1. Inplace(with solve for WordCount).
+1. [Inplace(with solve for WordCount)](https://github.com/dasfex/Algorithms/tree/master/mapreduce/inplace).
 
 ## Other
 
