@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
     for (int i = 1; i < argc; ++i) {
       fd = open(argv[i], O_RDONLY);
       if (fd == -1) {
-        perror("err");
+        perror("Can't open file\n");
         code = 1;
         continue;
       }
