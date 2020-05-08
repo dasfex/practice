@@ -1,6 +1,7 @@
 #include <boost/process.hpp>
 
 #include <iostream>
+#include <utility>
 #include <vector>
 
 namespace bp = boost::process;
@@ -63,19 +64,28 @@ int main(int argc, char* argv[]) {
 
     // sort and shuffle in this task useless cause inplace
 
+
+    std::vector<std::pair< std::string, bp::child>>
+    processes;
     std::vector<std::string> dstFiles;
-    for (auto& [key, values] : words) {
-      std::string tmpReduceName = std::tmpnam(nullptr);
-      writeValuesToFile(tmpReduceName, key, values);
+    for (auto&[key, values] : words) {
+      std::string tmpInputName = std::tmpnam(nullptr);
+      writeValuesToFile(tmpInputName, key, values);
 
       std::string tmpDstName = std::tmpnam(nullptr);
       dstFiles.push_back(tmpDstName);
 
-      bp::system("./" + scriptPath, bp::std_out > tmpDstName,
-                 bp::std_in < tmpReduceName);
-      bp::system("rm " + tmpReduceName);
+      processes.emplace_back(tmpInputName,
+          bp::child("./" + scriptPath, bp::std_out > tmpDstName,
+                                       bp::std_in < tmpInputName)
+      );
     }
     words.clear();
+
+    for (auto& [file, process] : processes) {
+      process.wait();
+      bp::system("rm " + file);
+    }
 
     mergeFiles(dstFile, dstFiles);
 
