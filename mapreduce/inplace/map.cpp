@@ -1,20 +1,16 @@
 #include <algorithm>
-#include <string>
-#include <sstream>
 #include <iostream>
+#include <sstream>
+#include <string>
 
-int main(int argc, char* argv[]) {
+int main() {
   std::string line;
   while (getline(std::cin, line)) {
     std::stringstream ss;
-    ss << line;
-    bool isWasKey = false;
+    ss << std::string(begin(line) + line.find('\t') + 1, end(line));
     std::string word;
     while (ss >> word) {
-      if (isWasKey) {
-        std::cout << word << '\t' << 1 << std::endl;
-      }
-      isWasKey = true;
+      std::cout << word << '\t' << 1 << std::endl;
     }
   }
 

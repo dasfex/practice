@@ -3,6 +3,7 @@
 #include <string>
 
 int main(int argc, char* argv[]) {
+
   std::string curWord;
   uint64_t sum = 0;
   while (std::cin >> curWord) {
