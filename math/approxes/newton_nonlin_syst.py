@@ -37,7 +37,7 @@ def newton(cur_x):
         W[0][0] = sp.diff(f1(), x).subs([(x, cur_x[0]), (y, cur_x[1])])
         W[0][1] = sp.diff(f1(), y).subs([(x, cur_x[0]), (y, cur_x[1])])
         W[1][0] = sp.diff(f2(), x).subs([(x, cur_x[0]), (y, cur_x[1])])
-        W[1][0] = sp.diff(f2(), y).subs([(x, cur_x[0]), (y, cur_x[1])])
+        W[1][1] = sp.diff(f2(), y).subs([(x, cur_x[0]), (y, cur_x[1])])
         inv = np.linalg.inv(W)
 
         f_in_point = f(cur_x)
