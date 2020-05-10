@@ -86,6 +86,9 @@ int main(int argc, char* argv[]) {
     size_t lines = getFileLinesCount(srcFile);
     size_t blockSize = lines / mapCount;
     size_t surplus = lines % mapCount;
+    if (blockSize == 0) {
+      mapCount = surplus;
+    }
 
     std::ifstream srcFin(srcFile);
     std::vector<std::pair<std::string, bp::child>> processes;
