@@ -1,6 +1,7 @@
 #include <boost/process.hpp>
 
 #include <iostream>
+#include <string>
 #include <utility>
 #include <vector>
 
@@ -35,11 +36,9 @@ void mergeFiles(const std::string& dstFile, const std::vector<std::string>& file
   std::ofstream fout(dstFile);
   for (auto& name : files) {
     std::ifstream tmpFileDst(name);
-    std::string word;
-    while (tmpFileDst >> word) {
-      uint64_t count;
-      tmpFileDst >> count;
-      fout << word << ' ' << count << std::endl;
+    std::string line;
+    while (std::getline(tmpFileDst, line)) {
+      fout << line << std::endl;
     }
     tmpFileDst.close();
     bp::system("rm " + name);
@@ -47,23 +46,70 @@ void mergeFiles(const std::string& dstFile, const std::vector<std::string>& file
   fout.close();
 }
 
+size_t getFileLinesCount(const std::string& file) {
+  std::ifstream fin(file);
+  return std::count(std::istreambuf_iterator<char>(fin),
+                    std::istreambuf_iterator<char>(), '\n');;
+}
+
+std::string getNewTmpFile(std::ifstream& source, size_t blockSize, size_t& surplus) {
+  std::string fileName = std::tmpnam(nullptr);
+  std::ofstream fout(fileName);
+  for (size_t i = 0; i < blockSize + surplus > 0 ? 1 : 0; ++i) {
+    std::string line;
+    getline(source, line);
+    fout << line << std::endl;
+  }
+  if (surplus > 0) {
+    --surplus;
+  }
+  return fileName;
+}
+
+enum class ARGS {
+  kCommand = 1,
+  kScriptPath,
+  kSourceFile,
+  kDstFile,
+  kMapCount
+};
+
 int main(int argc, char* argv[]) {
 
-  std::string function = argv[1];
-  std::string scriptPath = argv[2];
-  std::string srcFile = argv[3];
-  std::string dstFile = argv[4];
+  std::string function = argv[static_cast<int>(ARGS::kCommand)];
+  std::string scriptPath = argv[static_cast<int>(ARGS::kScriptPath)];
+  std::string srcFile = argv[static_cast<int>(ARGS::kSourceFile)];
+  std::string dstFile = argv[static_cast<int>(ARGS::kDstFile)];
 
   if (function == "map") {
+    size_t mapCount = std::stoi(argv[static_cast<int>(ARGS::kMapCount)]);
+    size_t lines = getFileLinesCount(srcFile);
+    size_t blockSize = lines / mapCount;
+    size_t surplus = lines % mapCount;
 
-    bp::system("./" + scriptPath, bp::std_out > dstFile, bp::std_in < srcFile);
+    std::ifstream srcFin(srcFile);
+    std::vector<std::pair<std::string, bp::child>> processes;
+    std::vector<std::string> dstFiles;
+    for (size_t fileInd = 0; fileInd < mapCount; ++fileInd) {
+      auto tmpFile = getNewTmpFile(srcFin, blockSize, surplus);
+      std::string dstFile = std::tmpnam(nullptr);
+      dstFiles.push_back(dstFile);
+      processes.emplace_back(tmpFile, bp::child("./" + scriptPath,
+          bp::std_out > dstFile, bp::std_in < tmpFile));
+    }
+
+    for (auto& [file, process] : processes) {
+      process.wait();
+      bp::system("rm " + file);
+    }
+
+    mergeFiles(dstFile, dstFiles);
 
   } else if (function == "reduce") {
 
     auto words = makeContainer(srcFile);
 
     // sort and shuffle in this task useless cause inplace
-
 
     std::vector<std::pair< std::string, bp::child>>
     processes;

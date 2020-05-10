@@ -38,12 +38,14 @@ re 2
 Run:
 
 ```
-./mapreduceScript what_we_run path_to_script src_file dst_file
+./mapreduceScript what_we_run path_to_script src_file dst_file optional_param
 ```
+
+If you ran map as optional_param you can specify maps count.
 
 For example:
 
 ```
-./mapreduceScript map mapScript input.txt tmp.txt
+./mapreduceScript map mapScript input.txt tmp.txt 3
 ./mapreduceScript reduce reduceScript tmp.txt output.txt
 ```
