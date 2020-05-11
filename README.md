@@ -1,5 +1,7 @@
 # Algorithms
 
+Hi! This is just some notes from my different algo and not only practise. Is you find some mistake please create an issue or pull request with fixes. Thanks!
+
 ## Data structures
 
 1. [Binary heap](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_heap.h).
