@@ -54,6 +54,18 @@ class counting_bloom_filter{
       ++Bits[hash(x) % std::size(Bits)];
     }
   }
+  
+  bool remove(const T& x) {
+    for (auto& hash : Hashes) {
+      if (Bits[hash(x) % std::size(Bits)] == 0) {
+        return false;
+      }
+    }
+    for (auto& hash : Hashes) {
+      --Bits[hash(x) % std::size(Bits)];
+    }
+    return true;
+  }
 
   bool check(const T& x) {
     for (auto& hash : Hashes) {
