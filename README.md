@@ -9,8 +9,8 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 3. [Segment tree(sum) with 2N memory use](https://github.com/dasfex/Algorithms/blob/master/data_structures/segment_tree.cpp).
 4. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
 5. Bloom filters.
-	+ Basic.
-	+ Counting.
+	+ [Basic](https://github.com/dasfex/Algorithms/blob/master/data_structures/bloom_filters/basic_bf.h).
+	+ [Counting](https://github.com/dasfex/Algorithms/blob/master/data_structures/bloom_filters/counting_bf.h).
 
 ## Math algorithms
 
