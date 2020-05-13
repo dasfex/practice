@@ -1,5 +1,5 @@
-#ifndef BASIC_BF_H_
-#define BASIC_BF_H_
+#ifndef COUNTING_BF_H_
+#define COUNTING_BF_H_
 
 #include <random>
 #include <string>
@@ -86,5 +86,5 @@ class counting_bloom_filter{
   std::vector<hasher<T>> Hashes;
 };
 
-#endif // BASIC_BF_H_
+#endif // COUNTING_BF_H_
 
