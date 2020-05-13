@@ -8,6 +8,9 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 2. [Binary search tree(unbalanced)](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_search_tree.cpp).
 3. [Segment tree(sum) with 2N memory use](https://github.com/dasfex/Algorithms/blob/master/data_structures/segment_tree.cpp).
 4. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
+5. Bloom filters.
+	+ Basic.
+	+ Counting.
 
 ## Math algorithms
 
