@@ -15,7 +15,7 @@ key1 \t re
 a \t asd asd
 ```
 
-After map(possible output):
+After ```map```(possible output):
 ```
 qwe 1
 qwe 1
@@ -28,7 +28,7 @@ asd 1
 asd 1
 ```
 
-After reduce(possible output):
+After ```reduce```(possible output):
 ```
 qwe 3
 asd 4
@@ -41,7 +41,7 @@ Run:
 ./mapreduceScript what_we_run path_to_script src_file dst_file optional_param
 ```
 
-If you ran map as optional_param you can specify maps count.
+If you ran ```map``` as ```optional_param``` you can specify maps count.
 
 For example:
 
