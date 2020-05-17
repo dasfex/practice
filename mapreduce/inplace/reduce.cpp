@@ -4,15 +4,14 @@
 
 int main(int argc, char* argv[]) {
 
-  std::string curWord;
+  std::string line;
   uint64_t sum = 0;
-  while (std::cin >> curWord) {
-    uint64_t count;
+  while (getline(std::cin, line)) {
+    uint64_t count = stoi(std::string(begin(line) + line.find('\t') + 1, end(line)));
     std::cin >> count;
     sum += count;
   }
-
-  std::cout << curWord << '\t' << sum << std::endl;
+  std::cout << std::string(begin(line), begin(line) + line.find('\t')) << '\t' << sum << std::endl;
 
   return 0;
 }
