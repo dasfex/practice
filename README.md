@@ -80,6 +80,7 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 ## MapReduce
 
 1. [Inplace(with solve for WordCount)](https://github.com/dasfex/Algorithms/tree/master/mapreduce/inplace).
+2. [Web Robot](https://github.com/dasfex/Algorithms/tree/master/mapreduce/webrobot).
 
 ## Other
 
