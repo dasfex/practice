@@ -2,7 +2,7 @@
 
 It is a realisation of bfs over the internet.
 
-We goes from all links from input file to the specified depth. We don't visit the same site twice. All links are absolute and comes from <a href> tags.
+We goes from all links from input file to the specified depth. We don't visit the same site twice. All links are absolute and comes from \<a href\> tags.
 
 Run as
 ```
