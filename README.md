@@ -77,6 +77,12 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 5. [GNU cat](https://github.com/dasfex/Algorithms/blob/master/linux_programming/cat.c).
 6. [Custom pipeline](https://github.com/dasfex/Algorithms/blob/master/linux_programming/pipeline.c).
 
+## Windows programming
+
+1. [Pipeline](https://github.com/dasfex/Algorithms/blob/master/windows_programming/pipeline.cpp).
+2. [Wrapper for winapi conditional variable](https://github.com/dasfex/Algorithms/blob/master/windows_programming/conditional_variable.h).
+3. [Wrapper for winapi critical section](https://github.com/dasfex/Algorithms/blob/master/windows_programming/critical_section.h).
+
 ## MapReduce
 
 1. [Inplace(with solve for WordCount)](https://github.com/dasfex/Algorithms/tree/master/mapreduce/inplace).
