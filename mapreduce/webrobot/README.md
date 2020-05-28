@@ -6,7 +6,7 @@ We goes from all links from input file to the specified depth. We don't visit th
 
 Run as
 ```
-./run.sh input\_file output\_file file\_for\_log tmp\_dir\_name depth map_count
+./run.sh input_file output_file file_for_log tmp_dir_name depth map_count
 ```
 
 For example
