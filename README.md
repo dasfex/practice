@@ -37,6 +37,9 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 7. [Newton method for solving nonlinear system](https://github.com/dasfex/Algorithms/blob/master/math/approxes/newton_nonlin_syst.py).
 8. [Power method to find max eigenvalue](https://github.com/dasfex/Algorithms/blob/master/math/approxes/PowerMethod.h).
 9. [Simpson integration](https://github.com/dasfex/Algorithms/blob/master/math/approxes/simpson_integration.py).
+10. [Count definite integral with five points method and adaptive steps](https://github.com/dasfex/Algorithms/blob/master/math/approxes/five_points_method.cpp).
+11. [Count definite integral with Gauss-3 and adaptive steps](https://github.com/dasfex/Algorithms/blob/master/math/approxes/gauss_3.cpp).
+12. [Solve integral equation with approximation kernel with degenerate kernel](https://github.com/dasfex/Algorithms/blob/master/math/approxes/integral_eq_solver.py).
 
 #### [Other](https://github.com/dasfex/Algorithms/tree/master/math/other)
 
