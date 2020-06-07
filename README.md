@@ -55,6 +55,7 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 1. [Dijkstra algorithm](https://github.com/dasfex/Algorithms/blob/master/graphs/Dijkstra.cpp).
 2. [LCA(less common ancestor) with binary lifts](https://github.com/dasfex/Algorithms/blob/master/graphs/Lca.cpp).
 3. [Some examples](https://github.com/dasfex/Algorithms/tree/master/graphs/exmp).
+4. [Find all minimum spanning trees in O(ans * nmlog(n)](https://github.com/dasfex/Algorithms/blob/master/graphs/msts.cpp).
 
 ## C++
 
