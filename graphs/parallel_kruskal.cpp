@@ -35,7 +35,10 @@ class Dsu{
   vector<int> dsu;
 };
 
-vector<edge> kruskal(size_t n, const vector<edge>& edges) {
+vector<edge> kruskal(size_t n, vector<edge>& edges) {
+  sort(begin(edges), end(edges), [](auto l, auto r) {
+    return l.w < r.w;
+  });
   Dsu dsu(n);
   vector<edge> forest;
   size_t sz = 0;
@@ -51,10 +54,7 @@ vector<edge> kruskal(size_t n, const vector<edge>& edges) {
   return forest;
 }
 
-vector<edge> parallelKruskal(size_t n, vector<edge> edges, size_t concurrency = 1) {
-  sort(begin(edges), end(edges), [](auto l, auto r) {
-    return l.w < r.w;
-  });
+vector<edge> parallelKruskal(size_t n, const vector<edge>& edges, size_t concurrency = 1) {
   size_t m = size(edges);
   vector<edge> combine;
   if (concurrency > 1) {
@@ -112,4 +112,3 @@ int main() {
 
   return 0;
 }
-
