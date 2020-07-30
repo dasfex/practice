@@ -97,4 +97,4 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 
 1. [Rational class](https://github.com/dasfex/Algorithms/blob/master/other/rational_class.cpp).
 2. [External sort](https://github.com/dasfex/Algorithms/tree/master/other/external_sort).
-3. [Get hex string from number](https://github.com/dasfex/Algorithms/tree/master/other).
+3. [Get hex string from number](https://github.com/dasfex/Algorithms/blob/master/other/hex_string_from_number.cpp).
