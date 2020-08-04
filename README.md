@@ -7,8 +7,9 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 1. [Binary heap](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_heap.h).
 2. [Binary search tree(unbalanced)](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_search_tree.cpp).
 3. [Segment tree(sum) with 2N memory use](https://github.com/dasfex/Algorithms/blob/master/data_structures/segment_tree.cpp).
-4. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
-5. [DSU with backup](https://github.com/dasfex/Algorithms/blob/master/data_structures/backup_dsu.cpp).
+4. [Segment tree with lazy propogation](https://github.com/dasfex/Algorithms/blob/master/data_structures/lazy_seg_tree.cpp).
+5. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
+6. [DSU with backup](https://github.com/dasfex/Algorithms/blob/master/data_structures/backup_dsu.cpp).
 
 #### [Bloom filters](https://github.com/dasfex/Algorithms/tree/master/data_structures/bloom_filters)
 
