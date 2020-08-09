@@ -10,11 +10,9 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 4. [Segment tree with lazy propogation](https://github.com/dasfex/Algorithms/blob/master/data_structures/lazy_seg_tree.cpp).
 5. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
 6. [DSU with backup](https://github.com/dasfex/Algorithms/blob/master/data_structures/backup_dsu.cpp).
-
-#### [Bloom filters](https://github.com/dasfex/Algorithms/tree/master/data_structures/bloom_filters)
-
-1. [Basic](https://github.com/dasfex/Algorithms/blob/master/data_structures/bloom_filters/basic_bf.h).
-2. [Counting](https://github.com/dasfex/Algorithms/blob/master/data_structures/bloom_filters/counting_bf.h).
+7. [Basic Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/basic_bf.h).
+8. [Counting Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/counting_bf.h).
+9. [Explicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/explicit_treap.cpp).
 
 ## Math algorithms
 
