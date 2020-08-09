@@ -58,8 +58,8 @@ class Treap {
     }
     
     Node* remove(Node* tree, int key) {
-        auto ab = Split(tree, key);
-        auto a1a2 = Split(ab.first, key - 1);
+        auto ab = Split(tree, key + 1);
+        auto a1a2 = Split(ab.first, key);
         return Merge(a1a2.first, ab.second);
     }
     
