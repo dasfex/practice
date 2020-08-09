@@ -8,7 +8,7 @@ class Treap {
     Treap() : root_(nullptr) {}
   
     void Add(int x) {
-        root_ = add(root_, new Node(x, std::mt19937{std::random_device{}}));
+        root_ = add(root_, new Node(x, std::mt19937({std::random_device{}()})()));
     }
     
     void Remove(int x) {
@@ -41,9 +41,9 @@ class Treap {
     
     std::pair<Node*, Node*> Split(Node* splited, int key) {
         if (splited == nullptr) { return {nullptr, nullptr}; }
-        if (solited->x < key) {
+        if (splited->x < key) {
             auto ab = Split(splited->right, key);
-            splited->right = ad.first;
+            splited->right = ab.first;
             return {splited, ab.second};
         } else {
             auto ab = Split(splited->left, key);
