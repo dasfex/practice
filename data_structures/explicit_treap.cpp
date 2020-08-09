@@ -52,9 +52,9 @@ class Treap {
         }
     }
     
-    Node* add(Node* tree, Node* new) {
-        auto ab = Split(tree, new->x);
-        return Merge(Merge(ab.first, new), ab.second);
+    Node* add(Node* tree, Node* new_node) {
+        auto ab = Split(tree, new_node->x);
+        return Merge(Merge(ab.first, new_node), ab.second);
     }
     
     Node* remove(Node* tree, int key) {
