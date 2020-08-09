@@ -13,6 +13,7 @@ Hi! This is just some notes from my algo and not only practise. If you find some
 7. [Basic Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/basic_bf.h).
 8. [Counting Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/counting_bf.h).
 9. [Explicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/explicit_treap.cpp).
+10. [Implicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/implicit_treap.cpp).
 
 ## Math algorithms
 
