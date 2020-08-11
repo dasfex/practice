@@ -1,6 +1,7 @@
 # Algorithms
 
-Hi! This is just some notes from my algo and not only practise. If you find some mistake please create an issue or pull request with fixes. Thanks!
+Hi! This is just some notes from my algo and not only practise. 
+If you find some mistake please create an issue or pull request with fixes. Thanks!
 
 ## Data structures
 
