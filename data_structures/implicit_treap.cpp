@@ -80,13 +80,13 @@ class Treap {
   }
 
   Node* add(Node* tree, int ind, Node* new_node) {
-    auto ab = Split(tree, ind);
+    auto ab = Split(tree, ind - 1);
     return Merge(Merge(ab.first, new_node), ab.second);
   }
 
   Node* remove(Node* tree, int key) {
-    auto ab = Split(tree, key + 1);
-    auto a1a2 = Split(ab.first, key);
+    auto ab = Split(tree, key);
+    auto a1a2 = Split(ab.first, key - 1);
     return Merge(a1a2.first, ab.second);
   }
 
