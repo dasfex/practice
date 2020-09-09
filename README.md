@@ -15,6 +15,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 8. [Counting Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/counting_bf.h).
 9. [Explicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/explicit_treap.cpp).
 10. [Implicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/implicit_treap.cpp).
+11. [Fenwick tree](https://github.com/dasfex/Algorithms/blob/master/data_structures/fenwick_tree.cpp).
 
 ## Math algorithms
 
