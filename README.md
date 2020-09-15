@@ -67,6 +67,8 @@ If you find some mistake please create an issue or pull request with fixes. Than
 
 1. [FindIf(multithreading function to find all numbers in some range that satisfies some unary predicate)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/find_if.h).
 2. [Reduce(multithreading function than compute result of some associative commutative binary predicate to all vector elements)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/reduce.h).
+3. [Generate all permutations in lexicographic order]
+(https://github.com/dasfex/Algorithms/blob/master/cpp/algos/permutations.cpp).
 
 #### [Classes](https://github.com/dasfex/Algorithms/tree/master/cpp/classes)
 
