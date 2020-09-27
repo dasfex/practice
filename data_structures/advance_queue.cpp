@@ -4,6 +4,8 @@
 template<class T, class Func>
 class UpdQueue{
  public:
+  UpdQueue() : func(Func()) {}
+ 
   template<class U, class = std::enable_if<std::is_convertible_v<std::decay_t<U>,
                                                                  std::decay_t<Func>>>>
   explicit UpdQueue(U&& func) : func(func) {}
