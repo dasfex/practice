@@ -16,6 +16,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 9. [Explicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/explicit_treap.cpp).
 10. [Implicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/implicit_treap.cpp).
 11. [Fenwick tree](https://github.com/dasfex/Algorithms/blob/master/data_structures/fenwick_tree.cpp).
+12. [Queue based on two stacks with template functor](https://github.com/dasfex/Algorithms/blob/master/data_structures/advance_queue.cpp).
 
 ## Math algorithms
 
