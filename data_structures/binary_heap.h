@@ -11,12 +11,12 @@ class Heap {
       , heap_size_(0)
       , capacity_(10) {}
 
-  Heap(size_t n)
+  explicit Heap(size_t n)
       : data_(new T[n + 1])
       , heap_size_(0)
       , capacity_(n + 1) {}
 
-  Heap(const vector<T>& v)
+  explicit Heap(const vector<T>& v)
       : data_(new T[v.size() + 1])
       , heap_size_(v.size())
       , capacity_(v.size() + 1) {
@@ -37,7 +37,7 @@ class Heap {
     return data_[1];
   }
 
-  T Pop() {
+  void Pop() {
     data_[1] = data_[heap_size_];
     --heap_size_;
     SiftDown(1);
@@ -57,6 +57,10 @@ class Heap {
 
   bool Empty() const {
     return heap_size_ == 0;
+  }
+ 
+  ~Heap() {
+    delete[] data_;
   }
 
  private:
