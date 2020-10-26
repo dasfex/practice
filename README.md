@@ -19,6 +19,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 12. [Queue](https://github.com/dasfex/Algorithms/blob/master/data_structures/advance_queue.cpp) based on two stacks with template functor.
 13. [Bidirectional list](https://github.com/dasfex/Algorithms/blob/master/data_structures/bidirectional_list.cpp).
 14. [Deque](https://github.com/dasfex/Algorithms/blob/master/data_structures/deque.h) based on vector of blocks(without invalidation when container relocate).
+15. [Cow-vector](https://github.com/dasfex/Algorithms/blob/master/data_structures/cow_vector.h)(relocate if and only if we want to change it and do not relocate if read-only).
 
 ## Math algorithms
 
