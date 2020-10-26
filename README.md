@@ -16,7 +16,9 @@ If you find some mistake please create an issue or pull request with fixes. Than
 9. [Explicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/explicit_treap.cpp).
 10. [Implicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/implicit_treap.cpp).
 11. [Fenwick tree](https://github.com/dasfex/Algorithms/blob/master/data_structures/fenwick_tree.cpp).
-12. [Queue based on two stacks with template functor](https://github.com/dasfex/Algorithms/blob/master/data_structures/advance_queue.cpp).
+12. [Queue](https://github.com/dasfex/Algorithms/blob/master/data_structures/advance_queue.cpp) based on two stacks with template functor.
+13. [Bidirectional list](https://github.com/dasfex/Algorithms/blob/master/data_structures/bidirectional_list.cpp).
+14. [Deque](https://github.com/dasfex/Algorithms/blob/master/data_structures/deque.h) based on vector of blocks(without invalidation when container relocate).
 
 ## Math algorithms
 
@@ -73,11 +75,9 @@ If you find some mistake please create an issue or pull request with fixes. Than
 #### [Classes](https://github.com/dasfex/Algorithms/tree/master/cpp/classes)
 
 1. [Vector](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/vector.cpp).
-2. [Bidirectional list](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/bidirectional_list.cpp).
-3. [Unique ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unique_ptr.cpp).
-4. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
-5. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
-6. [Deque based on vector of blocks(without invalidation when container relocate)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/deque.h).
+2. [Unique ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unique_ptr.cpp).
+3. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
+4. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
 
 ## Linux programming
 
