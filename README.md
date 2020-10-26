@@ -76,8 +76,9 @@ If you find some mistake please create an issue or pull request with fixes. Than
 
 1. [Vector](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/vector.cpp).
 2. [Unique ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unique_ptr.cpp).
-3. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
-4. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
+3. [Shared and weak ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/smart_ptr.h).
+4. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
+5. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
 
 ## Linux programming
 
