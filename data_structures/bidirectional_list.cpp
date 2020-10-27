@@ -914,3 +914,267 @@ int main() {
 
   return 0;
 }
+
+//////////////////////////////////////////////////////////
+/////////////////////// Second version ///////////////////
+//////////////////////////////////////////////////////////
+
+#pragma once
+
+template <typename T>
+class List {
+private:
+    struct Node {
+        T val;
+        Node* prev = nullptr;
+        Node* next = nullptr;
+
+        Node(const T& val) : val(val) {
+        }
+
+        Node(T&& val) : val(std::move(val)) {
+        }
+
+        Node(const Node* node) {
+            if (node == nullptr) {
+                return;
+            }
+            val = node->val;
+        }
+    };
+
+public:
+    class Iterator {
+    public:
+        Iterator(Node* cur, Node* end) : cur_(cur), end_(end) {
+        }
+
+        Iterator& operator++() {
+            cur_ = cur_->next;
+            return *this;
+        }
+
+        Iterator operator++(int) {
+            Iterator cur(cur_, end_);
+            ++*this;
+            return cur;
+        }
+
+        Iterator& operator--() {
+            if (!cur_) {
+                cur_ = end_;
+            } else {
+                cur_ = cur_->prev;
+            }
+            return *this;
+        }
+
+        Iterator operator--(int) {
+            Iterator cur(cur_, end_);
+            --*this;
+            return cur;
+        }
+
+        T& operator*() const {
+            return cur_->val;
+        }
+
+        T* operator->() const {
+            return &(cur_->val);
+        }
+
+        bool operator==(const Iterator& rhs) const {
+            return cur_ == rhs.cur_;
+        }
+
+        bool operator!=(const Iterator& rhs) const {
+            return cur_ != rhs.cur_;
+        }
+
+    private:
+        Node* cur_;
+        Node* end_;  // for -- when nullptr
+    };
+
+    List() : begin_(nullptr), end_(nullptr), size_(0) {
+    }
+
+    List(const List& list) : begin_(nullptr), end_(nullptr), size_(list.size_) {
+        if (!list.begin_) {
+            return;
+        }
+        begin_ = end_ = new Node(list.begin_->val);
+        Node* cur_cp = list.begin_;
+        Node* cur = begin_;
+        while (cur_cp->next) {
+            cur_cp = cur_cp->next;
+            InsertAfter(cur, new Node(cur_cp->val));
+            cur = cur->next;
+        }
+    }
+
+    List(List&& list)
+        : begin_(std::move(list.begin_)), end_(std::move(list.end_)), size_(list.size_) {
+        list.size_ = 0;
+        list.begin_ = nullptr;
+        list.end_ = nullptr;
+    }
+
+    ~List() {
+        while (!IsEmpty()) {
+            --size_;
+            Erase(end_);
+        }
+    }
+
+    List& operator=(const List& list) {
+        if (this == &list) {
+            return *this;
+        }
+        this->~List();
+        new (this) List(list);
+        return *this;
+    }
+
+    List& operator=(List&& list) {
+        if (this == &list) {
+            return *this;
+        }
+        this->~List();
+        new (this) List(std::move(list));
+        return *this;
+    }
+
+    bool IsEmpty() const {
+        return size_ == 0;
+    }
+
+    size_t Size() const {
+        return size_;
+    }
+
+    void PushBack(const T& elem) {
+        InsertAfter(end_, new Node(elem));
+        ++size_;
+    }
+
+    void PushBack(T&& elem) {
+        InsertAfter(end_, new Node(std::move(elem)));
+        ++size_;
+    }
+
+    void PushFront(const T& elem) {
+        InsertBefore(begin_, new Node(elem));
+        ++size_;
+    }
+
+    void PushFront(T&& elem) {
+        InsertBefore(begin_, new Node(std::move(elem)));
+        ++size_;
+    }
+
+    T& Front() {
+        return begin_->val;
+    }
+
+    const T& Front() const {
+        return begin_->val;
+    }
+
+    T& Back() {
+        return end_->val;
+    }
+
+    const T& Back() const {
+        return end_->val;
+    }
+
+    void PopBack() {
+        --size_;
+        Erase(end_);
+    }
+
+    void PopFront() {
+        --size_;
+        Erase(begin_);
+    }
+
+    Iterator Begin() {
+        return Iterator(begin_, end_);
+    }
+
+    Iterator End() {
+        return Iterator(nullptr, end_);
+    }
+
+private:
+    Node* begin_;
+    Node* end_;
+    size_t size_;
+
+    void InsertBefore(Node* existing_node, Node* new_node) {
+        if (begin_ == nullptr) {
+            begin_ = end_ = new_node;
+        } else if (existing_node == begin_) {
+            new_node->next = existing_node;
+            existing_node->prev = new_node;
+            begin_ = new_node;
+        } else {
+            Node* ex_previous_node = existing_node->prev;
+            existing_node->prev = new_node;
+            new_node->prev = ex_previous_node;
+            ex_previous_node->next = new_node;
+            new_node->next = existing_node;
+        }
+    }
+
+    void InsertAfter(Node* existing_node, Node* new_node) {
+        if (IsEmpty()) {
+            begin_ = end_ = new_node;
+        } else if (existing_node == end_) {
+            existing_node->next = new_node;
+            new_node->prev = existing_node;
+            end_ = new_node;
+        } else {
+            Node* ex_next = existing_node->next;
+            existing_node->next = new_node;
+            new_node->prev = existing_node;
+            ex_next->prev = new_node;
+            new_node->next = ex_next;
+        }
+    }
+
+    void Erase(Node* node) {
+        if (node->next == nullptr && node->prev == nullptr) {
+            delete node;
+            begin_ = end_ = nullptr;
+        } else if (node->next == nullptr) {
+            Node* previous = node->prev;
+            delete node;
+            end_ = previous;
+            end_->next = nullptr;
+        } else if (node->prev == nullptr) {
+            Node* next = node->next;
+            delete node;
+            begin_ = next;
+            begin_->prev = nullptr;
+        } else {
+            Node* previous = node->prev;
+            Node* next = node->next;
+            previous->next = next;
+            next->prev = previous;
+            delete node;
+        }
+    }
+};
+
+template <typename T>
+typename List<T>::Iterator begin(List<T>& list) {
+    return list.Begin();
+}
+
+template <typename T>
+typename List<T>::Iterator end(List<T>& list) {
+    return list.End();
+}
+
