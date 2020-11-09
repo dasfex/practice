@@ -16,7 +16,6 @@ class Treap {
     }
   
   private:
-    
     struct Node {
         int x;
         int y;
@@ -25,7 +24,7 @@ class Treap {
         
         Node(int x, int y, Node* left = nullptr, Node* right = nullptr) 
         : x(x), y(y), left(left), right(right) {}
-    }
+    };
     
     Node* Merge(Node* left, Node* right) {
         if (left == nullptr) { return right; }
