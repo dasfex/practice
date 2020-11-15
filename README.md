@@ -20,6 +20,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 13. [Bidirectional list](https://github.com/dasfex/Algorithms/blob/master/data_structures/bidirectional_list.cpp).
 14. [Deque](https://github.com/dasfex/Algorithms/blob/master/data_structures/deque.h) based on vector of blocks(without invalidation when container relocate).
 15. [Cow-vector](https://github.com/dasfex/Algorithms/blob/master/data_structures/cow_vector.h)(relocate if and only if we want to change it and do not relocate if read-only).
+16. [Intrusive list](https://github.com/dasfex/Algorithms/blob/master/data_structures/intrusive_list.h).
 
 ## Math algorithms
 
@@ -80,6 +81,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 3. [Shared and weak ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/smart_ptr.h).
 4. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
 5. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
+6. [Any](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/any.h).
 
 ## Linux programming
 
