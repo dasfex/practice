@@ -2,6 +2,7 @@
 
 #include <algorithm>
 
+// your type should inherit ListHook
 class ListHook {
 public:
     ListHook() : prev_(nullptr), next_(nullptr) {
