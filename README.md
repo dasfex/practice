@@ -6,21 +6,22 @@ If you find some mistake please create an issue or pull request with fixes. Than
 ## Data structures
 
 1. [Binary heap](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_heap.h).
-2. [Binary search tree(unbalanced)](https://github.com/dasfex/Algorithms/blob/master/data_structures/binary_search_tree.cpp).
-3. [Segment tree(sum) with 2N memory use](https://github.com/dasfex/Algorithms/blob/master/data_structures/segment_tree.cpp).
-4. [Segment tree with lazy propogation](https://github.com/dasfex/Algorithms/blob/master/data_structures/lazy_seg_tree.cpp).
-5. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
-6. [DSU with backup](https://github.com/dasfex/Algorithms/blob/master/data_structures/backup_dsu.cpp).
-7. [Basic Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/basic_bf.h).
-8. [Counting Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/counting_bf.h).
-9. [Explicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/explicit_treap.cpp).
-10. [Implicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/implicit_treap.cpp).
-11. [Fenwick tree](https://github.com/dasfex/Algorithms/blob/master/data_structures/fenwick_tree.cpp).
-12. [Queue](https://github.com/dasfex/Algorithms/blob/master/data_structures/advance_queue.cpp) based on two stacks with template functor.
-13. [Bidirectional list](https://github.com/dasfex/Algorithms/blob/master/data_structures/bidirectional_list.cpp).
-14. [Deque](https://github.com/dasfex/Algorithms/blob/master/data_structures/deque.h) based on vector of blocks(without invalidation when container relocate).
-15. [Cow-vector](https://github.com/dasfex/Algorithms/blob/master/data_structures/cow_vector.h)(relocate if and only if we want to change it and do not relocate if read-only).
-16. [Intrusive list](https://github.com/dasfex/Algorithms/blob/master/data_structures/intrusive_list.h).
+2. [Set with iterators](https://github.com/dasfex/ProgrammingPractice/blob/master/data_structures/set.h).
+3. [Unordered map with iterators](https://github.com/dasfex/ProgrammingPractice/blob/master/data_structures/unordered_map.h).
+4. [Segment tree(sum) with 2N memory use](https://github.com/dasfex/Algorithms/blob/master/data_structures/segment_tree.cpp).
+5. [Segment tree with lazy propogation](https://github.com/dasfex/Algorithms/blob/master/data_structures/lazy_seg_tree.cpp).
+6. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
+7. [DSU with backup](https://github.com/dasfex/Algorithms/blob/master/data_structures/backup_dsu.cpp).
+8. [Basic Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/basic_bf.h).
+9. [Counting Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/counting_bf.h).
+10. [Explicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/explicit_treap.cpp).
+11. [Implicit treap](https://github.com/dasfex/Algorithms/blob/master/data_structures/implicit_treap.cpp).
+12. [Fenwick tree](https://github.com/dasfex/Algorithms/blob/master/data_structures/fenwick_tree.cpp).
+13. [Queue](https://github.com/dasfex/Algorithms/blob/master/data_structures/advance_queue.cpp) based on two stacks with template functor.
+14. [Bidirectional list](https://github.com/dasfex/Algorithms/blob/master/data_structures/bidirectional_list.cpp).
+15. [Deque](https://github.com/dasfex/Algorithms/blob/master/data_structures/deque.h) based on vector of blocks(without invalidation when container relocate).
+16. [Cow-vector](https://github.com/dasfex/Algorithms/blob/master/data_structures/cow_vector.h)(relocate if and only if we want to change it and do not relocate if read-only).
+17. [Intrusive list](https://github.com/dasfex/Algorithms/blob/master/data_structures/intrusive_list.h).
 
 ## Math algorithms
 
