@@ -1,4 +1,4 @@
-# Algorithms
+# My programming practice
 
 Hi! This is just some notes from my algo and not only practice. 
 If you find some mistake please create an issue or pull request with fixes. Thanks!
