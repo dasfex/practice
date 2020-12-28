@@ -65,7 +65,8 @@ If you find some mistake please create an issue or pull request with fixes. Than
 2. [LCA(less common ancestor) with binary lifts](https://github.com/dasfex/Algorithms/blob/master/graphs/Lca.cpp).
 3. [Find all minimum spanning trees in O(ans * nmlog(n))](https://github.com/dasfex/Algorithms/blob/master/graphs/msts.cpp).
 4. [Parallel Kruskal](https://github.com/dasfex/Algorithms/blob/master/graphs/parallel_kruskal.cpp).
-5. [Some examples](https://github.com/dasfex/Algorithms/tree/master/graphs/exmp).
+5. [Check two trees for isomorphism](https://github.com/dasfex/ProgrammingPractice/blob/master/graphs/trees_isomorphic.cpp)(this is probability solver).
+6. [Some examples](https://github.com/dasfex/Algorithms/tree/master/graphs/exmp).
 
 ## C++
 
