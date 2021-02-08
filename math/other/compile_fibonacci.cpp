@@ -49,6 +49,11 @@ struct fibonachi {
 };
 
 template<size_t N>
+struct Fibonachi {
+    static const auto value = decltype(fibonachi<N>::val)::m12;
+};
+
+template<size_t N>
 struct bin_pow_wrapper {
   static constexpr auto val = fibonachi<N / 2>::val;
 };
@@ -64,7 +69,7 @@ struct fibonachi<1> {
 };
 
 int32_t main() {
-  cout << decltype(fibonachi<1000000000000000000>::val)::m12 << endl;
+  cout << Fibonachi<1000000000000000000>::value << endl;
 
   return 0;
 }
