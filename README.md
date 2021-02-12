@@ -84,6 +84,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 4. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
 5. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
 6. [Any](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/any.h).
+7. [Concurrent unordered map](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/classes/concurrent_unordered_map.h).
 
 ## Linux programming
 
