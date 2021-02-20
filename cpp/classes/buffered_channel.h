@@ -26,7 +26,7 @@ class BufferedChannel {
   std::optional<T> Recv() {
     std::unique_lock<std::mutex> lock(Mutex);
     FullNotifier.wait(lock, [chan = this] {
-      return !(chan->Queue.empty()) | chan->isClosed;
+      return !(chan->Queue.empty()) || chan->isClosed;
     });
     if (isClosed && Queue.empty()) {
       return std::nullopt;
