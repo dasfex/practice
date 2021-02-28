@@ -70,11 +70,11 @@ If you find some mistake please create an issue or pull request with fixes. Than
 
 ## C++
 
-#### [Algos](https://github.com/dasfex/Algorithms/tree/master/cpp/algos)
+#### Algos
 
 1. [Generate all permutations in lexicographic order](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/permutations.cpp).
 
-#### [Classes](https://github.com/dasfex/Algorithms/tree/master/cpp/classes)
+#### Classes
 
 1. [Vector](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/vector.cpp).
 2. [Unique ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unique_ptr.cpp).
