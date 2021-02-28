@@ -72,19 +72,24 @@ If you find some mistake please create an issue or pull request with fixes. Than
 
 #### [Algos](https://github.com/dasfex/Algorithms/tree/master/cpp/algos)
 
-1. [FindIf(multithreading function to find all numbers in some range that satisfies some unary predicate)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/find_if.h).
-2. [Reduce(multithreading function than compute result of some associative commutative binary predicate to all vector elements)](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/reduce.h).
-3. [Generate all permutations in lexicographic order](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/permutations.cpp).
+1. [Generate all permutations in lexicographic order](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/permutations.cpp).
 
 #### [Classes](https://github.com/dasfex/Algorithms/tree/master/cpp/classes)
 
 1. [Vector](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/vector.cpp).
 2. [Unique ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unique_ptr.cpp).
 3. [Shared and weak ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/smart_ptr.h).
-4. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/buffered_channel.h).
-5. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unbuffered_channel.h).
-6. [Any](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/any.h).
-7. [Concurrent unordered map](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/classes/concurrent_unordered_map.h).
+4. [Any](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/any.h).
+
+#### Concurrency
+
+1. [FindIf(multithreading function to find all numbers in some range that satisfies some unary predicate)](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/concurrency/find_if.h).
+2. [Reduce(multithreading function than compute result of some associative commutative binary predicate to all vector elements)](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/concurrency/reduce.h).
+3. [Spinlock](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/concurrency/spinlock.h).
+4. [Read-write lock](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/concurrency/rw_lock.h).
+5. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/concurrency/buffered_channel.h).
+6. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/concurrency/unbuffered_channel.h).
+7. [Concurrent unordered map](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/concurrency/concurrent_unordered_map.h).
 
 ## Golang
 
