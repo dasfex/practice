@@ -67,8 +67,7 @@ func (l *LRU) Range(f func(key, value int) bool) {
 }
 
 func (l *LRU) Clear() {
-	for k, v := range l.mp {
-		delete(l.mp, k)
-		delete(l.inv, v.Value.(int))
-	}
+	l.mp = make(map[int]*list.Element, l.cap)
+	l.inv = make(map[int]int, l.cap)
+	l.list.Init()
 }
