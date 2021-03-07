@@ -94,6 +94,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 ## Golang
 
 0. [Sprintf](https://github.com/dasfex/ProgrammingPractice/blob/master/golang/format.go).
+1. [LRU-cache](https://github.com/dasfex/ProgrammingPractice/blob/master/golang/lrucache.go).
 
 ## Linux programming
 
