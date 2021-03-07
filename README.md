@@ -72,7 +72,8 @@ If you find some mistake please create an issue or pull request with fixes. Than
 
 #### Algos
 
-1. [Generate all permutations in lexicographic order](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/permutations.cpp).
+0. [Generate all permutations in lexicographic order](https://github.com/dasfex/Algorithms/blob/master/cpp/algos/permutations.cpp).
+1. [LRU-cache](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/algos/lrucache.h).
 
 #### Classes
 
