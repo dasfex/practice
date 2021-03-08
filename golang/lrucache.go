@@ -1,3 +1,5 @@
+// +build !change
+
 package lrucache
 
 import "container/list"
@@ -21,21 +23,21 @@ type Cache interface {
 	Clear()
 }
 
-func New(cap int) Cache {
-	return &LRU{mp: make(map[int]*list.Element, cap), inv: make(map[int]int, cap), list: list.New(), cap: cap}
+type pair struct {
+	key int
+	val int
 }
 
 type LRU struct {
 	mp map[int]*list.Element
-	inv map[int]int
 	list *list.List
 	cap int
 }
 
 func (l *LRU) Get(key int) (int, bool) {
-	if val, ok := l.mp[key]; ok {
+	if val, ok := l.mp[key]; ok && val.Value.(*pair).key == key {
 		l.list.MoveToFront(val)
-		return l.list.Front().Value.(int), true
+		return l.list.Front().Value.(*pair).val, true
 	}
 	return 0, false
 }
@@ -43,24 +45,23 @@ func (l *LRU) Get(key int) (int, bool) {
 func (l *LRU) Set(key, value int) {
 	if val, ok := l.mp[key]; ok {
 		l.list.MoveToFront(val)
-		l.list.Front().Value = value
-		l.inv[value] = key
+		l.list.Front().Value.(*pair).key = key
+		l.list.Front().Value.(*pair).val = value
 	} else {
 		if l.list.Len() < l.cap {
-			l.mp[key] = l.list.PushFront(value)
-			l.inv[value] = key
+			l.mp[key] = l.list.PushFront(&pair{key: key, val: value})
 		} else if l.cap > 0 {
 			l.list.MoveToFront(l.list.Back())
-			l.list.Front().Value = value
+			l.list.Front().Value.(*pair).key = key
+			l.list.Front().Value.(*pair).val = value
 			l.mp[key] = l.list.Front()
-			l.inv[value] = key
 		}
 	}
 }
 
 func (l *LRU) Range(f func(key, value int) bool) {
 	for e := l.list.Back(); e != nil; e = e.Prev() {
-		if !f(l.inv[e.Value.(int)], e.Value.(int)) {
+		if !f(e.Value.(*pair).key, e.Value.(*pair).val) {
 			break
 		}
 	}
@@ -68,6 +69,9 @@ func (l *LRU) Range(f func(key, value int) bool) {
 
 func (l *LRU) Clear() {
 	l.mp = make(map[int]*list.Element, l.cap)
-	l.inv = make(map[int]int, l.cap)
 	l.list.Init()
+}
+
+func New(cap int) Cache {
+	return &LRU{mp: make(map[int]*list.Element, cap), list: list.New(), cap: cap}
 }
