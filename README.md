@@ -68,6 +68,11 @@ If you find some mistake please create an issue or pull request with fixes. Than
 5. [Check two trees for isomorphism](https://github.com/dasfex/ProgrammingPractice/blob/master/graphs/trees_isomorphic.cpp)(this is probability solver).
 6. [Some examples](https://github.com/dasfex/Algorithms/tree/master/graphs/exmp).
 
+## Uncategorized
+
+1. [Knut-Morris-Pratt algo](https://github.com/dasfex/ProgrammingPractice/blob/master/uncategorized/knut_morris_pratt.py).
+2. [Rabin-Carp algo](https://github.com/dasfex/ProgrammingPractice/blob/master/uncategorized/rabin_karp.py).
+
 ## C++
 
 #### Algos
