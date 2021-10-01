@@ -6,6 +6,8 @@ using namespace std;
 // you can compile with -ftemplate-depth=x 
 // when x is the max depth of template recursion
 
+namespace {
+
 constexpr uint64_t M = 1000000007;
 
 template<uint64_t a, uint64_t b, uint64_t c, uint64_t d>
@@ -16,8 +18,10 @@ struct matrix {
   static constexpr uint64_t m22 = d % M;
 };
 
-template<uint64_t a, uint64_t b, uint64_t c, uint64_t d,
-    uint64_t q, uint64_t w, uint64_t e, uint64_t r>
+template<uint64_t a, uint64_t b, 
+         uint64_t c, uint64_t d,
+         uint64_t q, uint64_t w, 
+         uint64_t e, uint64_t r>
 struct matrix_mul {
   static constexpr matrix<(a * q + b * e) % M,
                           (a * w + b * r) % M,
@@ -49,11 +53,6 @@ struct fibonachi {
 };
 
 template<size_t N>
-struct Fibonachi {
-    static const auto value = decltype(fibonachi<N>::val)::m12;
-};
-
-template<size_t N>
 struct bin_pow_wrapper {
   static constexpr auto val = fibonachi<N / 2>::val;
 };
@@ -66,6 +65,13 @@ struct bin_pow_wrapper<1> {
 template<>
 struct fibonachi<1> {
   static constexpr matrix<1, 1, 1, 0> val = {};
+};
+
+} // anonymous
+  
+template<size_t N>
+struct Fibonachi {
+    static const auto value = decltype(fibonachi<N>::val)::m12;
 };
 
 int32_t main() {
