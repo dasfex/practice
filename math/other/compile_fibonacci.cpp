@@ -36,30 +36,22 @@ template<size_t N>
 struct fibonachi {
   static constexpr auto val = [] {
     if constexpr (N % 2 == 1) {
+      using PrevFib = decltype(fibonachi<N - 1>::val);
       return matrix_mul<
-          decltype(fibonachi<N - 1>::val)::m11, decltype(fibonachi<N - 1>::val)::m12,
-          decltype(fibonachi<N - 1>::val)::m21, decltype(fibonachi<N - 1>::val)::m22,
+          PrevFib::m11, PrevFib::m12,
+          PrevFib::m21, PrevFib::m22,
           1, 1, 1, 0
       >::val;
     } else {
+      using HalfFib = decltype(fibonachi<N / 2>::val);
       return matrix_mul<
-          decltype(bin_pow_wrapper<N>::val)::m11, decltype(bin_pow_wrapper<N>::val)::m12,
-          decltype(bin_pow_wrapper<N>::val)::m21, decltype(bin_pow_wrapper<N>::val)::m22,
-          decltype(bin_pow_wrapper<N>::val)::m11, decltype(bin_pow_wrapper<N>::val)::m12,
-          decltype(bin_pow_wrapper<N>::val)::m21, decltype(bin_pow_wrapper<N>::val)::m22
+          HalfFib::m11, HalfFib::m12,
+          HalfFib::m21, HalfFib::m22,
+          HalfFib::m11, HalfFib::m12,
+          HalfFib::m21, HalfFib::m22
       >::val;
     }
   }();
-};
-
-template<size_t N>
-struct bin_pow_wrapper {
-  static constexpr auto val = fibonachi<N / 2>::val;
-};
-
-template<>
-struct bin_pow_wrapper<1> {
-  static constexpr matrix<1, 1, 1, 0> val = {};
 };
 
 template<>
@@ -71,11 +63,11 @@ struct fibonachi<1> {
   
 template<size_t N>
 struct Fibonachi {
-    static const auto value = decltype(fibonachi<N>::val)::m12;
+    static constexpr auto value = decltype(fibonachi<N>::val)::m12;
 };
 
 int32_t main() {
   cout << Fibonachi<1000000000000000000>::value << endl;
-
+  
   return 0;
 }
