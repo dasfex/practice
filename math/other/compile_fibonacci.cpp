@@ -30,9 +30,6 @@ struct matrix_mul {
 };
 
 template<size_t N>
-struct bin_pow_wrapper;
-
-template<size_t N>
 struct fibonachi {
   static constexpr auto val = [] {
     if constexpr (N % 2 == 1) {
