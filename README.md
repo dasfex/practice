@@ -96,6 +96,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 5. [Buffered channel(class that provides synchronization between threads when store some values(in buffer))](https://github.com/dasfex/Algorithms/blob/master/cpp/concurrency/buffered_channel.h).
 6. [Unbuffered channel(same as buffered channel but without buffer)](https://github.com/dasfex/Algorithms/blob/master/cpp/concurrency/unbuffered_channel.h).
 7. [Concurrent unordered map](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/concurrency/concurrent_unordered_map.h).
+8. [Matrix multiplication algos(trivial and by block) with openmp](https://github.com/dasfex/ProgrammingPractice/blob/master/cpp/concurrency/matrix_mul_openmp.cpp).
 
 ## Golang
 
