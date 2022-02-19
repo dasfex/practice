@@ -1,9 +1,17 @@
 package reverse
 
+import (
+	"strings"
+	"unicode/utf8"
+)
+
 func Reverse(input string) string {
-	runes := []rune(input)
-	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
-		runes[i], runes[j] = runes[j], runes[i]
+	var buf strings.Builder
+	buf.Grow(len(input))
+	for len(input) > 0 {
+		r, sz := utf8.DecodeLastRuneInString(input)
+		buf.WriteRune(r)
+		input = input[:len(input)-sz]
 	}
-	return string(runes)
+	return buf.String()
 }
