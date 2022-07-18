@@ -9,7 +9,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 2. [Set with iterators](https://github.com/dasfex/ProgrammingPractice/blob/master/data_structures/set.h).
 3. [Unordered map with iterators](https://github.com/dasfex/ProgrammingPractice/blob/master/data_structures/unordered_map.h).
 4. [Segment tree(sum) with 2N memory use](https://github.com/dasfex/Algorithms/blob/master/data_structures/segment_tree.cpp).
-5. [Segment tree with lazy propogation](https://github.com/dasfex/Algorithms/blob/master/data_structures/lazy_seg_tree.cpp).
+5. [Segment tree with lazy propagation](https://github.com/dasfex/Algorithms/blob/master/data_structures/lazy_seg_tree.cpp).
 6. [DSU(disjoint set union)](https://github.com/dasfex/Algorithms/blob/master/data_structures/dsu.cpp).
 7. [DSU with backup](https://github.com/dasfex/Algorithms/blob/master/data_structures/backup_dsu.cpp).
 8. [Basic Bloom filter](https://github.com/dasfex/Algorithms/blob/master/data_structures/basic_bf.h).
