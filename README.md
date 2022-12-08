@@ -82,7 +82,8 @@ If you find some mistake please create an issue or pull request with fixes. Than
 
 #### Classes
 
-1. [Vector](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/vector.cpp).
+1. [Vector](https://github.com/dasfex/practice/blob/master/cpp/classes/vector/vector.hpp)
+and [tests](https://github.com/dasfex/practice/blob/master/cpp/classes/vector/vector_test.cpp).
 2. [Unique ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/unique_ptr.cpp).
 3. [Shared and weak ptr](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/smart_ptr.h).
 4. [Any](https://github.com/dasfex/Algorithms/blob/master/cpp/classes/any.h).
