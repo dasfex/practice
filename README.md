@@ -54,7 +54,7 @@ If you find some mistake please create an issue or pull request with fixes. Than
 1. [Binary exponential](https://github.com/dasfex/Algorithms/blob/master/math/other/binary_exp.cpp).
 2. [Eiler function](https://github.com/dasfex/Algorithms/blob/master/math/other/EilerFunction.cpp).
 3. [Fast finding nth fibonacci number modulo m](https://github.com/dasfex/Algorithms/blob/master/math/other/fibonacci.cpp).
-4. [Fast finding nth fibonacci number modulo m on compilation time](https://github.com/dasfex/Algorithms/blob/master/math/other/compile_fibonacci.cpp).
+4. [Fast finding nth fibonacci number modulo m on compilation time](https://github.com/dasfex/practice/blob/master/cpp/meta/compile_fibonacci.cpp).
 5. [Danilevskiy algo to find characteristic polynomial and Newton algo to find real roots](https://github.com/dasfex/Algorithms/blob/master/math/other/Danilevskiy%26Newton.h).
 
 #### [Some algos in pictures](https://github.com/dasfex/Algorithms/tree/master/math/some_algos_in_pictures)
