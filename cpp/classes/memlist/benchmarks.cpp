@@ -9,11 +9,11 @@ namespace {
 constexpr std::size_t kSize = 100'000u;
 
 struct Heavy {
-  char data[64];
+  char data[32768];
 };
 
 template <typename T>
-std::list<T> GetStlList(std::size_t n, T t = T()) {
+std::list<T> GetStl(std::size_t n, T t = T()) {
   std::list<T> list;
   for (int i = 0; i < n; ++i) {
     list.push_back(t);
@@ -22,7 +22,7 @@ std::list<T> GetStlList(std::size_t n, T t = T()) {
 }
 
 template <typename T, std::size_t N>
-MemList<T, N> GetMemList(T t = T()) {
+MemList<T, N> GetMem(T t = T()) {
   MemList<T, N> list;
   for (int i = 0; i < N; ++i) {
     list.PushBack(t);
@@ -31,7 +31,7 @@ MemList<T, N> GetMemList(T t = T()) {
 }
 
 template <typename T>
-void StlListInsert(std::size_t n, T t = T()) {
+void StlInsert(std::size_t n, T t = T()) {
   std::list<T> list;
   for (int i = 0; i < n; ++i) {
     list.push_back(t);
@@ -39,7 +39,7 @@ void StlListInsert(std::size_t n, T t = T()) {
 }
 
 template <typename T, std::size_t N>
-void MemListInsert(T t = T()) {
+void MemInsert(T t = T()) {
   MemList<T, N> list;
   for (int i = 0; i < N; ++i) {
     list.PushBack(t);
@@ -47,87 +47,115 @@ void MemListInsert(T t = T()) {
 }
 
 template <typename T>
-T StlListFor(const std::list<T>& list) {
+T StlFor(const std::list<T>& list) {
   T result = T();
   for (auto begin = list.begin(), end = list.end(); begin != end; ++begin) {
-    result = *begin;
+    benchmark::DoNotOptimize(result = *begin);
   }
   return result;
 }
 
 template <typename T>
-T MemListFor(MemList<T, kSize>& list) {
+T MemFor(MemList<T, kSize>& list) {
   T result = T();
   for (auto begin = list.Begin(), end = list.End(); begin != end; ++begin) {
-    result = *begin;
+    benchmark::DoNotOptimize(result = *begin);
   }
   return result;
 }
 
 }  // namespace
 
-static void bmStlListInsertInt(benchmark::State& state) {
+static void bmStlCreateInt(benchmark::State& state) {
   for (auto _ : state) {
-    StlListInsert<int>(kSize, 0);
+    std::list<int> list;
   }
 }
 
-static void bmStlListInsertHeavy(benchmark::State& state) {
+static void bmMemCreateInt(benchmark::State& state) {
   for (auto _ : state) {
-    StlListInsert<Heavy>(kSize, Heavy{});
+    MemList<int, kSize> list;
   }
 }
 
-static void bmMemListInsertInt(benchmark::State& state) {
+static void bmStlCreateHeavy(benchmark::State& state) {
   for (auto _ : state) {
-    MemListInsert<int, kSize>(0);
+    std::list<Heavy> list;
   }
 }
 
-static void bmMemListInsertHeavy(benchmark::State& state) {
+static void bmMemCreateHeavy(benchmark::State& state) {
   for (auto _ : state) {
-    MemListInsert<Heavy, kSize>(Heavy{});
+    MemList<Heavy, kSize> list;
   }
 }
 
-static void bmStlListForInt(benchmark::State& state) {
-  auto list = GetStlList<int>(kSize, 0);
+static void bmStlInsertInt(benchmark::State& state) {
   for (auto _ : state) {
-    StlListFor<int>(list);
+    StlInsert<int>(kSize, 0);
   }
 }
 
-static void bmMemListForInt(benchmark::State& state) {
-  auto list = GetMemList<int, kSize>(0);
+static void bmStlInsertHeavy(benchmark::State& state) {
   for (auto _ : state) {
-    MemListFor<int>(list);
+    StlInsert<Heavy>(kSize, Heavy{});
   }
 }
 
-static void bmStlListForHeavy(benchmark::State& state) {
-  auto list = GetStlList<Heavy>(kSize, Heavy{});
+static void bmMemInsertInt(benchmark::State& state) {
   for (auto _ : state) {
-    StlListFor<Heavy>(list);
+    MemInsert<int, kSize>(0);
   }
 }
 
-static void bmMemListForHeavy(benchmark::State& state) {
-  auto list = GetMemList<Heavy, kSize>(Heavy{});
+static void bmMemInsertHeavy(benchmark::State& state) {
   for (auto _ : state) {
-    MemListFor<Heavy>(list);
+    MemInsert<Heavy, kSize>(Heavy{});
   }
 }
 
-BENCHMARK(bmStlListInsertInt);
-BENCHMARK(bmMemListInsertInt);
+static void bmStlForInt(benchmark::State& state) {
+  auto list = GetStl<int>(kSize, 0);
+  for (auto _ : state) {
+    StlFor<int>(list);
+  }
+}
 
-BENCHMARK(bmStlListInsertHeavy);
-BENCHMARK(bmMemListInsertHeavy);
+static void bmMemForInt(benchmark::State& state) {
+  auto list = GetMem<int, kSize>(0);
+  for (auto _ : state) {
+    MemFor<int>(list);
+  }
+}
 
-BENCHMARK(bmStlListForInt);
-BENCHMARK(bmMemListForInt);
+static void bmStlForHeavy(benchmark::State& state) {
+  auto list = GetStl<Heavy>(kSize, Heavy{});
+  for (auto _ : state) {
+    StlFor<Heavy>(list);
+  }
+}
 
-BENCHMARK(bmStlListForHeavy);
-BENCHMARK(bmMemListForHeavy);
+static void bmMemForHeavy(benchmark::State& state) {
+  auto list = GetMem<Heavy, kSize>(Heavy{});
+  for (auto _ : state) {
+    MemFor<Heavy>(list);
+  }
+}
+
+//BENCHMARK(bmStlCreateInt);
+//BENCHMARK(bmMemCreateInt);
+//BENCHMARK(bmStlCreateHeavy);
+//BENCHMARK(bmMemCreateHeavy);
+
+BENCHMARK(bmStlInsertInt);
+BENCHMARK(bmMemInsertInt);
+BENCHMARK(bmStlInsertHeavy);
+BENCHMARK(bmMemInsertHeavy);
+
+//BENCHMARK(bmStlForInt);
+//BENCHMARK(bmMemForInt);
+
+//BENCHMARK(bmStlForHeavy);
+//BENCHMARK(bmMemForHeavy);
 
 BENCHMARK_MAIN();

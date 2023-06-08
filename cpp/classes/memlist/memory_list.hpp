@@ -3,21 +3,16 @@
 #include <vector>
 
 // TODO In memory list и потраченное время
-// 4. побенчмаркать относительно обычного листа ->
-// результаты сохранить куда-нибудь, чтобы потом в статью.
-// 5. попробовать нормально подряд вставлять.
 // 6. delete.
 // 7. уплотнение.
-// 8. бенчмарки.
-// 9. убрать лишний индирект попробовать.
-// 10. ещё раз бенчмарки.
+// 8. убрать лишний индирект попробовать.
 
 template <typename T, std::size_t N>
 class MemList {
  private:
   struct Node {
     T* value = nullptr;  // aligned storage
-    int prev;  // нужно?
+    int prev;
     int next;
   };
 
@@ -57,7 +52,7 @@ class MemList {
       data_head_ = node_ind;
     } else if (it == End()) {
       data_[data_tail_].next = node_ind;
-      data_[node_ind].prev = data_tail_;
+      SetNgb(data_[node_ind], data_tail_, N);
 
       data_tail_ = node_ind;
     } else {
