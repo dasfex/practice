@@ -1,31 +1,35 @@
 #pragma once
 
+#include <type_traits>
 #include <vector>
 
 // TODO In memory list и потраченное время
 // 6. delete.
 // 7. уплотнение.
-// 8. убрать лишний индирект попробовать.
 
 template <typename T, std::size_t N>
 class MemList {
  private:
   struct Node {
-    T* value = nullptr;  // aligned storage
+    std::aligned_storage<sizeof(T), alignof(T)> value;
     int prev;
     int next;
   };
 
  public:
-  struct Iterator;
+  struct iterator;
+
+  using value_type = T;
+  using const_iterator = const iterator;
 
   MemList() {
+
     for (std::size_t i = 0; i < N; ++i) {
       SetNgb(data_[i], i - 1, i + 1);
     }
   }
 
-  void Insert(Iterator it, const T& x) {
+  void Insert(iterator it, const T& x) {
     if (size_ == N) {
       return;
     }
@@ -40,17 +44,17 @@ class MemList {
       empty_head_ = empty_tail_ = -1;
     }
 
-    new_node.value = new T(x);
+    std::construct_at(std::launder(reinterpret_cast<T*>(&new_node.value)), x);
     if (size_ == 0) {
       data_head_ = data_tail_ = node_ind;
 
       SetNgb(data_[data_head_], -1, N);
-    } else if (it == Begin()) {
+    } else if (it == begin()) {
       data_[it.ind_].prev = node_ind;
       data_[node_ind].next = it.ind_;
 
       data_head_ = node_ind;
-    } else if (it == End()) {
+    } else if (it == end()) {
       data_[data_tail_].next = node_ind;
       SetNgb(data_[node_ind], data_tail_, N);
 
@@ -66,45 +70,51 @@ class MemList {
     ++size_;
   }
 
-  std::vector<T> AsArray() const {
+  void Delete(iterator it) {
     if (size_ == 0) {
-      return {};
+      return;
     }
 
-    std::vector<T> res;
-    res.reserve(size_);
+    if (it == begin()) {
+      const int right_ind = data_[it.ind_].next;
+      data_[right_ind].prev = -1;
 
-    int cur_ind = data_head_;
-    while (cur_ind != data_tail_) {
-      res.push_back(*data_[cur_ind].value);
-      cur_ind = data_[cur_ind].next;
+      data_[empty_head_].prev = it.ind_;
+      empty_head_ = it.ind_;
+    } else if (it == end()) {
+
+    } else {
+
     }
-    res.push_back(*data_[data_tail_].value);
 
-    return res;
+    std::destroy_at(std::launder(reinterpret_cast<T*>(&data_[it.ind_].value)));
   }
 
   void PushBack(const T& x) {
-    Insert(End(), x);
+    Insert(end(), x);
   }
 
   void PushFront(const T& x) {
-    Insert(Begin(), x);
+    Insert(begin(), x);
   }
 
-  Iterator Begin() {
+  iterator begin() {
     return {this, data_head_};
   }
 
-  Iterator End() {
+  const_iterator begin() const {
+    return {this, data_head_};
+  }
+
+  const_iterator end() const {
     return {};
   }
 
-  struct Iterator {
-    Iterator(MemList<T, N>* list = nullptr, int ind = -1)
-            : list_(list), ind_(ind) {}
+  struct iterator {
+    iterator(const MemList<T, N>* list = nullptr, int ind = -1)
+            : list_{const_cast<MemList<T, N>*>(list)}, ind_{ind} {}
 
-    Iterator& operator++() {
+    iterator& operator++() {
       if (ind_ == list_->data_tail_) {
         list_ = nullptr;
         ind_ = -1;
@@ -115,21 +125,25 @@ class MemList {
       return *this;
     }
 
-    Iterator operator++() const {
+    iterator operator++() const {
       auto tmp = *this;
       ++(*this);
       return tmp;
     }
 
     T& operator*() {
-      return *list_->data_[ind_].value;
+      return *std::launder(reinterpret_cast<T*>(&list_->data_[ind_].value));
     }
 
-    bool operator!=(const Iterator& rhs) const {
+    const T& operator*() const {
+      return *std::launder(reinterpret_cast<const T*>(&list_->data_[ind_].value));
+    }
+
+    bool operator!=(const iterator& rhs) const {
       return list_ != rhs.list_ || ind_ != rhs.ind_;
     }
 
-    bool operator==(const Iterator& rhs) const {
+    bool operator==(const iterator& rhs) const {
       return !(*this != rhs);
     }
 
@@ -138,6 +152,16 @@ class MemList {
     MemList<T, N>* list_ = nullptr;
     int ind_ = -1;
   };
+
+  ~MemList() {
+    int cur_ind = data_head_;
+    while (cur_ind != data_tail_) {
+      int destroy_ind = cur_ind;
+      cur_ind = data_[cur_ind].next;
+      std::destroy_at(std::launder(reinterpret_cast<T*>(&data_[destroy_ind].value)));
+    }
+    std::destroy_at(std::launder(reinterpret_cast<T*>(&data_[data_tail_].value)));
+  }
 
 
  private:

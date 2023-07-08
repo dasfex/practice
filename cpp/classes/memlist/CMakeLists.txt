@@ -2,8 +2,11 @@ cmake_minimum_required(VERSION 3.21)
 project(listin)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_COMPILER_ID "clang")
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+message([STATUS] " Use compiler: ${CMAKE_CXX_COMPILER_ID}")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
 
 include(FetchContent)
 FetchContent_Declare(

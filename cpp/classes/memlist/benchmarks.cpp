@@ -31,18 +31,17 @@ MemList<T, N> GetMem(T t = T()) {
 }
 
 template <typename T>
-void StlInsert(std::size_t n, T t = T()) {
-  std::list<T> list;
+void StlInsert(std::list<T>& list, std::size_t n, T t = T()) {
   for (int i = 0; i < n; ++i) {
     list.push_back(t);
   }
 }
 
 template <typename T, std::size_t N>
-void MemInsert(T t = T()) {
-  MemList<T, N> list;
+void MemInsert(MemList<T, kSize>& list, T t = T()) {
   for (int i = 0; i < N; ++i) {
     list.PushBack(t);
+    benchmark::ClobberMemory();
   }
 }
 
@@ -58,7 +57,7 @@ T StlFor(const std::list<T>& list) {
 template <typename T>
 T MemFor(MemList<T, kSize>& list) {
   T result = T();
-  for (auto begin = list.Begin(), end = list.End(); begin != end; ++begin) {
+  for (auto begin = list.begin(), end = list.end(); begin != end; ++begin) {
     benchmark::DoNotOptimize(result = *begin);
   }
   return result;
@@ -91,26 +90,30 @@ static void bmMemCreateHeavy(benchmark::State& state) {
 }
 
 static void bmStlInsertInt(benchmark::State& state) {
+  std::list<int> list;
   for (auto _ : state) {
-    StlInsert<int>(kSize, 0);
+    StlInsert<int>(list, kSize, 0);
   }
 }
 
 static void bmStlInsertHeavy(benchmark::State& state) {
+  std::list<Heavy> list;
   for (auto _ : state) {
-    StlInsert<Heavy>(kSize, Heavy{});
+    StlInsert<Heavy>(list, kSize, Heavy{});
   }
 }
 
 static void bmMemInsertInt(benchmark::State& state) {
+  MemList<int, kSize> list;
   for (auto _ : state) {
-    MemInsert<int, kSize>(0);
+    MemInsert<int, kSize>(list, 0);
   }
 }
 
 static void bmMemInsertHeavy(benchmark::State& state) {
+  MemList<Heavy, kSize> list;
   for (auto _ : state) {
-    MemInsert<Heavy, kSize>(Heavy{});
+    MemInsert<Heavy, kSize>(list, Heavy{});
   }
 }
 
@@ -147,15 +150,14 @@ static void bmMemForHeavy(benchmark::State& state) {
 //BENCHMARK(bmStlCreateHeavy);
 //BENCHMARK(bmMemCreateHeavy);
 
-BENCHMARK(bmStlInsertInt);
-BENCHMARK(bmMemInsertInt);
-BENCHMARK(bmStlInsertHeavy);
-BENCHMARK(bmMemInsertHeavy);
+// BENCHMARK(bmStlInsertInt);
+//BENCHMARK(bmMemInsertInt);
+// BENCHMARK(bmStlInsertHeavy);
+// BENCHMARK(bmMemInsertHeavy);
 
-//BENCHMARK(bmStlForInt);
-//BENCHMARK(bmMemForInt);
-
-//BENCHMARK(bmStlForHeavy);
-//BENCHMARK(bmMemForHeavy);
+BENCHMARK(bmStlForInt);
+BENCHMARK(bmMemForInt);
+BENCHMARK(bmStlForHeavy);
+BENCHMARK(bmMemForHeavy);
 
 BENCHMARK_MAIN();
