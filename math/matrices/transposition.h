@@ -10,7 +10,7 @@ void EffectiveTransposition(std::vector<std::vector<int>>& matrix) {
   if (matrix.size() < matrix[0].size()) {
     matrix.resize(max_size);
     for (size_t i = min_size; i < max_size; ++i) {
-      matrix[i].resize(min_size);
+      matrix[i].resize(max_size);
     }
     for (size_t i = 0; i < max_size; ++i) {
       for (size_t j = min_size; j < max_size; ++j) {
