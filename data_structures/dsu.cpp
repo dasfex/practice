@@ -1,5 +1,5 @@
 class Dsu {
-  vector<int> dsu;
+  std::vector<int> dsu;
 
 public:
   Dsu(int n) : dsu{std::vector<int>(n + 1, -1)} {}
